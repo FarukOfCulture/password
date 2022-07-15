@@ -2,6 +2,7 @@ const length = document.querySelector('[data-length]')
 const slider = document.querySelector('[data-slider]')
 const checkboxs = document.querySelectorAll('[data-checkbox]')
 const password = document.querySelector('[data-password]')
+const button = document.querySelector('[data-button]')
 
 const update = () => {
 	var list = "abcdefghijklmnopqrstuvwxyz"
@@ -22,9 +23,7 @@ slider.addEventListener('input', () => {
 })
 
 checkboxs.forEach((checkbox) => {
-	checkbox.firstChild.addEventListener('change', () => {
-		update()
-	})
+	checkbox.firstChild.addEventListener('change', update)
 })
 
-
+button.addEventListener("click", update)
